@@ -460,6 +460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b3cd91db3c464ed0ac0abac8d23129a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  x: 0
+  text: nani
 --- !u!1 &1989771427
 GameObject:
   m_ObjectHideFlags: 0
