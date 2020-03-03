@@ -10,13 +10,20 @@ public class WormController : MonoBehaviour
      public Vector3 moveLeft;
      public Vector3 jump;
      
-     void Start()
-     {
+     public GameObject bullets;
+     public GameObject canon;
+     public float shoot = 100;
+     public Transform bulletPosition; 
+
+         
+    void Start()
+            {
          //gameObject.GetComponent<Rigidbody>().AddForce(0,0,1);
-     }
+            }
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.D))
+        
+    {  
+         if (Input.GetKeyDown(KeyCode.D))
         {
             Debug.Log("D ist gedrückt");
             worm.AddForce(moveRight);
@@ -34,6 +41,23 @@ public class WormController : MonoBehaviour
             worm.AddForce(moveLeft);
 
         }
-    }
-    
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GameObject sphere = Instantiate (bullets, bulletPosition.position, Quaternion.identity);
+            sphere.GetComponent<Rigidbody>().AddForce(canon.transform.up * shoot);
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            canon.transform.Rotate(-5, 0, 0, Space.Self);
+            Debug.Log ("Button Input detected");
+        }
+
+        if (Input.GetKey(KeyCode.E))
+        {
+            canon.transform.Rotate(5, 0, 0, Space.Self);
+            Debug.Log ("Button Input detected");
+      }
+    }  
 }
+    
