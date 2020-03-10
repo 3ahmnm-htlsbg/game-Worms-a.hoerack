@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WormController : MonoBehaviour
+public class WormController2 : MonoBehaviour
 {
      public float force;
      public Rigidbody worm;
@@ -27,37 +27,37 @@ public class WormController : MonoBehaviour
     void Update()
         
     {  
-         if (Input.GetKeyDown(KeyCode.D))
+         if (Input.GetKeyDown(KeyCode.L))
         {
-            Debug.Log("D ist gedrückt");
+            Debug.Log("L ist gedrückt");
             worm.AddForce(moveRight);
 
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("W ist gedrückt");
+            Debug.Log("I ist gedrückt");
             worm.AddForce(jump);
 
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            Debug.Log("A ist gedrückt");
+            Debug.Log("J ist gedrückt");
             worm.AddForce(moveLeft);
 
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             GameObject sphere = Instantiate (bullets, bulletPosition.position, Quaternion.identity);
             sphere.GetComponent<Rigidbody>().AddForce(canon.transform.up * shoot);
         }
 
-        if (Input.GetKey(KeyCode.Q))
+        if (Input.GetKey(KeyCode.U))
         {
             canon.transform.Rotate(-5, 0, 0, Space.Self);
             Debug.Log ("Button Input detected");
         }
 
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.O))
         {
             canon.transform.Rotate(5, 0, 0, Space.Self);
             Debug.Log ("Button Input detected");
